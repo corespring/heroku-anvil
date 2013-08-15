@@ -18,6 +18,7 @@ class Anvil::CLI < Thor
   method_option :type,      :type => :string,  :aliases => "-t", :desc => "Build a specific slug type (tgz, deb)"
 
   def build(source=nil)
+    puts "running build......."
     Anvil::Engine.build(source, options)
   rescue Anvil::Builder::BuildError => ex
     error "Build Error: #{ex.message}"
