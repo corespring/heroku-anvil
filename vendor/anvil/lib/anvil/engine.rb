@@ -26,6 +26,8 @@ class Anvil::Engine
       :type      => options[:type] || "tgz"
     }
 
+    puts "Anvil::Engine source : #{source}"
+
     builder = if is_url?(source)
       Anvil::Builder.new(source)
     else

@@ -24,6 +24,8 @@ class Anvil::Manifest
   end
 
   def build(options={})
+
+    puts "Anvil Host: #{anvil_host}"
     uri  = URI.parse("#{anvil_host}/manifest/build")
     http = Net::HTTP.new(uri.host, uri.port)
 
