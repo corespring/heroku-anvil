@@ -13,6 +13,9 @@ class Anvil::Builder
   attr_reader :source
 
   def initialize(source)
+
+    puts "Anvil::Builder initialize - setting source to : #{source}"
+
     @source = source
   end
 
@@ -34,6 +37,7 @@ class Anvil::Builder
       req.initialize_http_header name => val.to_s
     end
 
+    puts "Anvil::Builder - setting source to : #{source}"
     req.set_form_data({
       "buildpack" => options[:buildpack],
       "cache"     => options[:cache],
